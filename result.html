@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBKNOT</title>
+    <link rel="icon" type="image/png" href="Asset/Images/Designer.png">
+    <link rel="stylesheet" href="Asset/styles/navbar.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+
+        * {
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            background-image: url('Asset/Images/frame.webp');
+            font-family: "Montserrat", sans-serif;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+
+        .card1 {
+
+            margin-top: 20vh;
+            width: 65%;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            color: whitesmoke;
+        }
+
+        .data {
+            margin: 10px 0px;
+        }
+
+        .data ul {
+            list-style: none;
+        }
+
+        .card2 {
+            text-align: center;
+            margin-top: 20vh;
+            width: 20%;
+            height: fit-content;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            color: whitesmoke;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+        }
+
+        body h1 {
+            font-size: 70px;
+            margin: 20px 0px 5% 20px;
+            color: white;
+        }
+
+        .imghold img {
+            width: 25vw;
+            border-radius: 20px;
+        }
+
+        .imghold {
+            border: 2px solid white;
+            border-radius: 20px;
+        }
+
+        .result {
+            font-size: large;
+            border: 2px solid white;
+            border-radius: 20px;
+            height: 100%;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="glass-navbar">
+        <header>
+            <h3>WEBKNOT</h3>
+        </header>
+        <ul>
+            <li><a href="SelectAnalys.html" title="Home">Home</a></li>
+            <li><a href="Fileupload.html" title="File Upload">File Upload</a></li>
+            <li><a href="result.html" title="Result">Result</a></li>
+            <li><a href="dascoard.html" title="Result">Dashboard</a></li>
+        </ul>
+        <div class="profile">
+            <img src="Asset/Images/frame.webp" alt="Profile Picture" title="Profile Picture">
+        </div>
+    </nav>
+    <div class="flex">
+
+
+        <div class="card1">
+            <h1>Result </h1>
+            <div class="container">
+                <div class="imghold">
+                    <img src="https://www.restonnow.com/files/2016/02/DRONE-by-jacinta-lluch-valero1-600x450.jpg"
+                        alt="drone in Air">
+                </div>
+                <div class="result"><span>Arial Drone,Accuracy: 98% </span></div>
+            </div>
+        </div>
+        <div class="card2">
+            <h2>Recent Search</h2>
+            <div class="data">
+                <ul>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                    <li>Lorem, ipsum dolor.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

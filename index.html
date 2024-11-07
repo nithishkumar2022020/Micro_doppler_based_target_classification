@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- coding by @_.codedevotee -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Register form</title>
+    <link rel="icon" type="image/png" href="Asset/Images/Designer.png">
+    <!-- for fast load of fonts  -->
+    <link rel="preload" href="https://unpkg.com/boxicons@2.1.4/fonts/boxicons.woff2" as="font" type="font/woff2"
+        crossorigin="anonymous">
+
+    <!--Boxicons CDN-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="Asset/styles/style.css">
+    <style>
+        /* black and white signin page top start */
+        .Sign-wrapper {
+            z-index: 101;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .top-white {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 100%;
+            height: 50%;
+            background-color: rgb(255, 255, 255);
+            align-items: center;
+        }
+
+
+        .bottom-black {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            height: 50%;
+            background-color: black;
+
+        }
+
+        .bottom-black h1 {
+            color: white;
+        }
+
+        .glass-effect {
+            position: absolute;
+            z-index: 100;
+            display: flex;
+        }
+
+        .glass-effect.move-left,
+        .left-button.move-left {
+            transform: translateX(-100%);
+            /* Move to the left */
+            opacity: 0;
+            /* Fade out */
+            transition-duration: 2s;
+        }
+
+        .glass-effect.move-right,
+        .right-button.move-right {
+            transform: translateX(100%);
+            /* Move to the left */
+            opacity: 0;
+            /* Fade out */
+            transition-duration: 2s;
+        }
+
+        /* buttons in glass effect start  */
+        .button-container button {
+            cursor: pointer;
+        }
+
+        /* .button-container {
+            position: relative;
+            top: 45%;
+            z-index: 10001;
+
+        } */
+
+        .left-button,
+        .right-button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 5px 6px 6px rgb(0 0 0 / 34%);
+            width: 200px;
+            border: 2px solid black;
+        }
+
+        .left-button {
+
+            right: 5%;
+            font-weight: bold;
+            color: rgb(255, 255, 255);
+            /* background: linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)); */
+            margin-right: auto;
+            background-color: rgb(0, 0, 0);
+        }
+
+        .right-button {
+
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            left: 5%;
+            /* background: linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)); */
+            background-color: white;
+            margin-left: auto;
+        }
+
+        /* buttons in glass effect end  */
+        /* Glass effect top of page  end   */
+        /* black and white signin page top end */
+    </style>
+
+</head>
+
+<body>
+    <!-- FOR SOURCE CODE COMMENT "CODE" -->
+    <div class="glass-effect">
+        <div class="wrapper Sign-wrapper">
+            <span class="top-white">
+                <div class="signin-text">
+                    <h1>Welcome</h1>
+                    <span>For Individual login</span>
+                </div>
+                <div class="button-container">
+                    <button class="left-button" onclick="moveAndDisappear()">Personal
+                        Login</button>
+                </div>
+            </span>
+            <span class="bottom-black">
+                <div class="signin-text">
+                    <h1>Get Started With Us</h1>
+                </div>
+                <div class="button-container">
+                    <button class="right-button" onclick="moveAndDisappear()">Commercial
+                        Login</button>
+                </div>
+            </span>
+        </div>
+    </div>
+    <div class="wrapper wrapper2">
+        <span class="rotate-bg"></span>
+        <span class="rotate-bg2"></span>
+
+        <div class="form-box login">
+            <h2 class="title animation" style="--i:0; --j:21">Login</h2>
+
+            <form action="#" class="Login" autocomplete="on">
+                <div class="input-box animation" style="--i:1; --j:22">
+                    <label for="login-username">Username</label>
+                    <input type="text" id="login-username" name="Username" required autocomplete="Username">
+                    <i class='bx bxs-user'></i>
+                </div>
+
+                <div class="input-box animation" style="--i:2; --j:23">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" name="password" required autocomplete="current-password">
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <button type="submit" class="btn animation" style="--i:3; --j:24">Login</button>
+                <div class="linkTxt animation" style="--i:5; --j:25">
+                    <p>Don't have an account? <a href="#" class="register-link">Sign Up</a></p>
+                </div>
+            </form>
+
+        </div>
+
+        <div class="info-text login">
+            <h2 class="animation" style="--i:0; --j:20">Welcome Back!</h2>
+            <p class="animation" style="--i:1; --j:21">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deleniti,rem?</p>
+        </div>
+
+
+
+        <div class="form-box register">
+
+            <h2 class="title animation" style="--i:17; --j:0">Sign Up</h2>
+
+            <form action="#" class="SignUp" autocomplete="on">
+                <div class="input-box animation" style="--i:18; --j:1">
+                    <label for="Username1">Username</label>
+                    <input type="text" id="Username1" name="Username" required autocomplete="Username">
+                    <i class='bx bxs-user'></i>
+                </div>
+
+                <div class="input-box animation" style="--i:19; --j:2">
+                    <label for="email1">Email</label>
+                    <input type="email" id="email1" name="email" required autocomplete="email">
+                    <i class='bx bxs-envelope'></i>
+                </div>
+
+                <div class="input-box animation" style="--i:20; --j:3">
+                    <label for="password3">Password</label>
+                    <input type="password" id="password3" name="password" required autocomplete="new-password">
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+
+                <button type="submit" class="btn Second-SignUp animation" style="--i:21;--j:4">Sign
+                    Up</button>
+
+                <div class="linkTxt animation" style="--i:22; --j:5">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="info-text register">
+            <h2 class="animation" style="--i:17; --j:0;">Welcome Back!</h2>
+            <p class="animation" style="--i:18; --j:1;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deleniti,rem?</p>
+        </div>
+
+    </div>
+    <script>
+        document.querySelectorAll('form input, form button').forEach(element => {
+            element.disabled = true;
+        });
+
+        // before sine up start
+        // script.js
+        function moveAndDisappear() {
+            const glassEffectRight = document.querySelector('.glass-effect');
+            const personalButton = document.querySelector('.left-button');
+            const CommercialButton = document.querySelector('.right-button');
+            glassEffectRight.classList.add('move-right');
+            personalButton.classList.add('move-left');
+            CommercialButton.classList.add('move-right');
+            // activating the form
+            document.querySelectorAll('form input, form button').forEach(element => {
+                element.disabled = false;
+            });
+            setTimeout(() => {
+                document.querySelector('.Sign-wrapper').style.display = "none";
+
+            }, 1500);
+        }
+    </script>
+
+    <script src="Asset/scripts/script.js"></script>
+    <script type="module" src="Asset/scripts/DatabaseScript.js"></script>
+</body>
+
+</html>
